@@ -1,0 +1,11 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.principal {
+    heigth: 86vh;
+    color: white;
+    background-color: blue;
+}
+
+#arte {}
