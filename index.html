@@ -1,67 +1,79 @@
+Link del ejercicio:
+
+http://www.cursophp.com.ar/14931510/unidad8.html
+
+///////////////
+
+Archivo: unidad8.html
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es_AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventos y validación</title>
+    <style>
+    /* incluyo el estilo para mejorar la visibilidad */
+    body {padding: 5rem;}
+    button,input,div {padding: 0.5rem;font-size: 1.5rem;}
+    </style>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap tarjetas</title>
+  </head>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-</head>
+  <body>
+    <form id="form">
+      <div>
+        <label for="usuario">Usuario: </label>
+        <input type="text" name="usuario" id="usuario" />
+      </div>
+      <div>
+        <label for="clave">Clave: </label>
+        <input type="password" name="clave" id="clave" />
+      </div>
 
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="36%" y="50%" fill="#eceeef" dy=".5em">Thumbnail</text></svg>
-                    <div class="card-body">
-                        <p class="card-text">Esta es una tarjeta más amplia con texto de apoyo a continuación como una introducción natural a contenido adicional.<br>Este contenido es un poco más largo.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
-                            </div>
-                            <small class="text-muted">9 minutos</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="36%" y="50%" fill="#eceeef" dy=".5em">Thumbnail</text></svg>
-                    <div class="card-body">
-                        <p class="card-text">Esta es una tarjeta más amplia con texto de apoyo a continuación como una introducción natural a contenido adicional.<br>Este contenido es un poco más largo.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
-                            </div>
-                            <small class="text-muted">9 minutos</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="36%" y="50%" fill="#eceeef" dy=".5em">Thumbnail</text></svg>
-                    <div class="card-body">
-                        <p class="card-text">Esta es una tarjeta más amplia con texto de apoyo a continuación como una introducción natural a contenido adicional.<br>Este contenido es un poco más largo.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
-                            </div>
-                            <small class="text-muted">9 minutos</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-</body>
+      <div>
+        <button type="submit" id="ingresar">Ingresar</button>
+      </div>
+    </form>
 
+    <script src="control.js"></script>
+  </body>
 </html>
+
+
+
+///////////////
+
+Archivo: control.js:
+
+function logSubmit(event) {
+  // se recolectan los valores de los campos del formulario
+  const usuario = document.getElementById("usuario").value;
+  const clave = document.getElementById("clave").value;
+  // se valida que los cuadros de texto correspondientes a “usuario y clave” no se encuentren vacíos
+  if (usuario == "" || clave == "") {
+    // Deberá desplegarse una ventana indicando el motivo por el cual no puede ingresar
+    alert("Por favor, completar los datos");
+    // Si ambos campos no se validan correctamente el formulario no debe enviarse
+    event.preventDefault();
+  } else {
+    // y que el cuadro de texto del “usuario” incluya un arroba.
+    const busqueda = "@";
+    const indexOfFirst = usuario.indexOf(busqueda);
+    if (indexOfFirst == -1) {
+      // Deberá desplegarse una ventana indicando el motivo por el cual no puede ingresar
+      alert("Falta el arroba en el usuario");
+      // Si ambos campos no se validan correctamente el formulario no debe enviarse
+      event.preventDefault();
+    } else {
+      // Si ambos campos se validan correctamente el formulario se envia
+      alert("Gracias por comunicarse con nosotros!");
+    }
+  }
+}
+const form = document.getElementById("form");
+// Mediante el uso del evento que se ejecuta en el momento del envío del formulario
+form.addEventListener("submit", logSubmit);
+
+
+
